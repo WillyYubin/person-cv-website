@@ -5,7 +5,12 @@ exclude:
   - src/
   - node_modules/
   - dist/
+  - docs/
+  - cv/
+  - public/
   - package.json
   - package-lock.json
   - vite.config.js
+  - vite.config.ts
   - .github/
+  - Gemfile.lock

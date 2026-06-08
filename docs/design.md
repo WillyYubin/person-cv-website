@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 # 个人简历网站 设计方案 v3
 
 ## 一、简历内容
