@@ -1,0 +1,7 @@
+node_modules/
+dist/
+docs/
+Gemfile
+Gemfile.lock
+_config.yml
+.DS_Store
