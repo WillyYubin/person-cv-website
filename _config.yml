@@ -1,0 +1,11 @@
+theme: jekyll-theme-primer
+title: Willy Yu - Full Stack Engineer CV
+description: Personal CV Website
+exclude:
+  - src/
+  - node_modules/
+  - dist/
+  - package.json
+  - package-lock.json
+  - vite.config.js
+  - .github/

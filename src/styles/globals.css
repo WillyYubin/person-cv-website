@@ -1,0 +1,179 @@
+/* ─── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --bg-base:        #050d1a;
+  --bg-primary:     #0a1628;
+  --bg-card:        #0f2038;
+  --bg-card-hover:  #132540;
+
+  --cyan:           #00d4ff;
+  --cyan-dim:       rgba(0, 212, 255, 0.15);
+  --cyan-glow:      0 0 30px rgba(0, 212, 255, 0.35), 0 0 60px rgba(0, 212, 255, 0.15);
+  --purple:         #a855f7;
+  --purple-dim:     rgba(168, 85, 247, 0.15);
+  --purple-glow:    0 0 30px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.15);
+  --green:          #10b981;
+
+  --text-primary:   #e2e8f0;
+  --text-secondary: #7090b0;
+  --text-muted:     #3a5068;
+
+  --border:         #1a3050;
+  --border-hover:   rgba(0, 212, 255, 0.4);
+
+  --grad-text:      linear-gradient(90deg, #00d4ff, #a855f7);
+  --grad-cyan:      linear-gradient(135deg, #00d4ff, #0099cc);
+
+  --nav-width:      72px;
+  --section-pad:    5rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  margin-left: var(--nav-width);
+  width: calc(100% - var(--nav-width));
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+section:not(#hero) {
+  padding: var(--section-pad) 0;
+}
+
+/* ─── Typography ─────────────────────────────────────────────── */
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.section-title .gradient {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+/* ─── Progress Bar (top) ─────────────────────────────────────── */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--grad-cyan);
+  transform-origin: 0%;
+  z-index: 1000;
+}
+
+/* ─── Tags / Pills ───────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.tag-cyan {
+  background: var(--cyan-dim);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+}
+
+.tag-cyan:hover {
+  background: rgba(0, 212, 255, 0.25);
+  box-shadow: var(--cyan-glow);
+}
+
+.tag-purple {
+  background: var(--purple-dim);
+  color: var(--purple);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.tag-purple:hover {
+  background: rgba(168, 85, 247, 0.25);
+  box-shadow: var(--purple-glow);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+/* ─── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: var(--cyan-dim);
+  color: var(--cyan);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  :root {
+    --section-pad: 3.5rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+}
